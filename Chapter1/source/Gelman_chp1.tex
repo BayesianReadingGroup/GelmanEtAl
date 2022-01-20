@@ -136,7 +136,7 @@ telling the truth''
   p(L|R)&=&0.8\cr
   p(L|!R)&=&0.9
 \end{eqnarray*}
-where \cor{}$R$\cob{} is the event of the good machine being the \cored{}red\cob{} one and \cor{}$L$\cob{} is losing.
+\cob{}where \cor{}$R$\cob{} is the event of the good machine being the \cored{}red\cob{} one and \cor{}$L$\cob{} is losing.
 \end{frame}
 
 \begin{frame}{Example of Bayesian reasoning - the reasoning}
@@ -179,8 +179,10 @@ Say you nonetheless tried \cored{}red\cob{} again and lost again
   according to the result: we would probably want to know more about
   the estimated probabilities, like, how do we estimate the quality of
   the estimates, surely that's getting better as we do repeated
-  experiments? That's what we'll learn about, of course, but first,
-  the traditional diversion in thinking about what probabilities are!
+  experiments? What about the model itsself, when do we decide the
+  information from the \cor{}dodgy character\cob{} was false? That's
+  what we'll learn about, of course, but first, the traditional
+  diversion in thinking about what probabilities are!
   \end{frame}
 
 \begin{frame}{Probabilities - what do they mean?}
@@ -295,7 +297,7 @@ The \coblu{}horizontal axis\cob{} is the point spread, \coblu{}vertical axis\cob
   \item probability of favourite wins \cor{}Pr(favourite wins)\cob
   \item \cor{}Pr(favorite wins $|$ PS is 3.5)\cob
   \item \cor{}Pr(favorite wins by more than the PS)\cob
-  \item \cor{}Pr(favorite wins by more than the PS $|$ point spread is 3.5)\cob
+  \item \cor{}Pr(favorite wins by more than the PS $|$ PS is 3.5)\cob
   \end{itemize}
   \vskip 0.75cm
   and so on; PS is point-spread.
@@ -347,7 +349,7 @@ The black line on the right is \cor{}Normal$(0,14^2)$\cob.
   \cob{}where\cor
   $$\xi\sim \mbox{Normal}(0,14^2)$$
   \cob
-  and the basic assumption is that the \cor{}score-PS\cob{} is independent of  \cor{}PS\cob.
+  and the basic assumption is that the \cor{}score minus PS\cob{} is independent of  \cor{}PS\cob.
   \vfill
 \color{gray}figure from the book\cob
 \end{frame}
@@ -361,7 +363,7 @@ The black line on the right is \cor{}Normal$(0,14^2)$\cob.
   \end{itemize}
   \vskip 0.75cm
   which is sensible and maybe even useful, but ignores the
-\textbf{errors} in the model: \cor{}score-PS\cob{} is probably neither
+\textbf{errors} in the model: \cor{}score minus PS\cob{} is probably neither
 precisely normal nor precisely independent of \cor{}PS\cob{} and it
 \textbf{erases} the potential discovery of something special about
 games with PS of 8.5.
