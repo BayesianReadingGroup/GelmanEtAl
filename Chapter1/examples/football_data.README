@@ -1,0 +1,7 @@
+from
+
+http://www.stat.columbia.edu/~gelman/book/data/football.asc
+
+and used
+
+sed 's/\s\+/,/g' football_data.txt | sed 's/,//'> football_data.csv
