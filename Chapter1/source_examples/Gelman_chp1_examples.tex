@@ -136,7 +136,7 @@ fD.error = fD.spread   - fD.diff
 
 using Gadfly,Cairo,Fontconfig
 
-plt=plot(footballData,x=:spread,y=:difference,
+plt=plot(fD,x=:spread,y=:difference,
          Theme(default_color="red",
                point_size=1pt,
                background_color="white",
@@ -214,7 +214,7 @@ plt=plot(layer2,layer1,
 
 \begin{frame}{Model}
 \color{reddish}
-  $$\mbox{difference} = \mbox{score} + \xi$$
+  $$\mbox{difference} = \mbox{spread} + \xi$$
 \color{black}where\color{reddish}
 $$\xi\sim\mbox{Normal}(0,\sigma^2)$$
 \color{black}and\color{reddish}{} $\sigma=14$\color{black}. This implies that a win happens with probability\color{reddish}
@@ -269,7 +269,7 @@ fD.win = score.(fD.favorite,fD.underdog)
 wins = groupby(fD, :spread)
 wins = combine(wins,nrow,:win => sum => :totalWin)
 
-s=std(footballData.error)
+s=std(fD.error)
 
 wins.counted = wins.totalWin ./ wins.nrow
 wins.predicted = modelResult.(wins.spread,s)
@@ -324,7 +324,7 @@ model = std(filter(:spread => isGood,fD).error)
 using GLM
     
 fm = @formula(difference ~ spread)
-linearRegressor = lm(fm, footballData)
+linearRegressor = lm(fm, fD)
     
 \end{lstlisting}
 \end{frame}
